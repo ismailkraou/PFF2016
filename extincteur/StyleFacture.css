@@ -1,0 +1,51 @@
+
+        table {
+       
+        }
+        #num
+        {
+            /* margin: initial; */
+    margin-bottom: -68px;
+        
+        }
+          #date
+        {
+          float: right;
+    margin-right: 248px;
+        
+        
+        }
+          #tete
+        {
+          position: relative;
+    margin: auto;
+    margin-bottom: 158px;
+        
+        }
+        #main
+        {
+        	
+      
+        }
+        #Client
+        {
+                   margin-top: 117px;
+    position: relative;
+    margin-left: 280px;
+    margin-bottom: -132px;
+       
+      
+        }
+@media print {
+th {
+border-top-left-radius: 10px;
+}
+#main { 
+width: 800px;
+                    margin-top: 200px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+       
+}
+}

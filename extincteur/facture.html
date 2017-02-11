@@ -1,0 +1,151 @@
+<?php
+
+
+include("securite/conexion.php");
+session_start();
+
+	 if(!isset($_SESSION['login']) or $_SESSION['login']==''){
+
+
+		header("Location: ../index.php");
+	}else{
+		
+			$req="SELECT * FROM  `produits` ";
+			$rs=mysql_query($req) or die(mysql_error());
+			
+			
+			
+			$req1="select * from clients";
+			$rs1=mysql_query($req1) or die(mysql_error());
+			$req3="select *from produits";
+			$rs3=mysql_query($req3) or die(mysql_error());
+			
+		?>	
+
+<!DOCTYPE html>
+<html>
+<head>
+<script language="javascript">
+
+function prints(var el){
+
+window.print();
+}
+</script>
+</head>
+<body>
+    <style>
+        table {
+       
+        }
+        #num
+        {
+            /* margin: initial; */
+    margin-bottom: -68px;
+        
+        }
+          #date
+        {
+          float: right;
+    margin-right: 248px;
+        
+        
+        }
+          #tete
+        {
+          position: relative;
+    margin: auto;
+    margin-bottom: 158px;
+        
+        }
+        #main
+        {
+                    margin-top: 200px;
+    position: relative;
+    margin-left: 280px;
+       
+      
+        }
+        #Client
+        {
+                   margin-top: 117px;
+    position: relative;
+    margin-left: 280px;
+    margin-bottom: -132px;
+       
+      
+        }
+    </style>
+	<input type="button" onclick="prints('tete');">
+    <div id="main">
+        <div id="tete">
+          <div id="num">
+    <h2> Facture N :258/15 </h2>
+    
+    
+    </div>
+        <div id="date">
+    <h2> Fes Le : 07/01/2016 </h2>
+    
+    </div>
+            <div id="Client">
+    <h2> Client : Bouabid Zakariae</h2>
+    
+    </div>
+        </div>
+    
+<table border="" style="    border: 0px;
+    border-color: black;
+    border-spacing: 0px;" >
+  <tr>
+      <th style="width : 100px;    border-top-left-radius: 10px;">Qte</th>
+    <th style="width : 500px; ">Designation</th>
+    
+    <th style="width : 100px;">Pu</th>
+    <th style="width : 100px;    border-top-right-radius: 10px;">Total</th>
+  </tr>
+  <tr>
+  
+    <td  rowspan="1">  <br>03 <br>
+        02 <br>
+        01 <br></td>
+        <td rowspan="1">
+        Vente :<br>
+        Extincteur 01 kg poudre <br>
+        Extincteur 05 kg poudre  <br>
+        Extincteur 02 kg poudre  <br>
+       
+      
+      
+      </td>
+    <td rowspan="1">
+        <br> 500 <br>
+        600 <br>
+        300 <br></td>
+    <td rowspan="1"> <br>1500 <br>
+        1200 <br>
+        300 <br></td>
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="3" style=" border-bottom-left-radius: 10px;"> <br>Arrete la Presente Facture à la Somme de :<br>
+        trois Mille six Cents  Dh
+        </td>
+        <td>total H.T.</td>
+        <td>3000 DH</td>
+    
+    </tr><tr>
+        
+        <td>T.V.A. 20%</td>
+        <td>600 DH</td>
+    
+    </tr><tr>
+        
+        <td>total T.T.C</td>
+        <td style=" border-bottom-right-radius: 10px;" >3600 DH</td>
+    
+    </tr>
+        
+</table>
+</div>
+</body>
+</html>
